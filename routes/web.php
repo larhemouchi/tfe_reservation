@@ -15,6 +15,37 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+Route::resource('roles', 'RoleController');
+
+Route::resource('users', 'UserController');
+
+Route::resource('reservations', 'ReservationController');
+
+Route::resource('salles', 'SalleController');
+
+Route::resource('representations', 'RepresentationController');
+
+Route::resource('pieces_theatres', 'Pieces_theatreController');
+
+
+Route::resource('paiements', 'PaiementController');
+
+
+
+Route::resource('sieges', 'SiegeController');
+
+Route::resource('categories', 'CategorieController');
+
+
+
+
+
+
+/*
 
 Route::get('users', 'UserController@index');
 Route::get('users/create', 'UserController@create');
@@ -79,6 +110,21 @@ Route::post('pieces_theatres', 'Pieces_theatreController@store');
 Route::get('pieces_theatres/{id}/edit', 'Pieces_theatreController@edit');
 Route::put('pieces_theatres/{id}', 'Pieces_theatreController@update');
 Route::delete('pieces_theatres/{id}', 'Pieces_theatreController@destroy');
+
+Route::get('categories', 'CategorieController@index');
+Route::get('categories/create', 'CategorieController@create');
+Route::post('categories', 'CategorieController@store');
+Route::get('categories/{id}/edit', 'CategorieController@edit');
+Route::put('categories/{id}', 'CategorieController@update');
+Route::delete('categories/{id}', 'CategorieController@destroy');
+*/
+
+Route::get('/', function () {
+    return view('dashboard');
+})->middleware('auth');
+
+Auth::routes();
+
 
 
 

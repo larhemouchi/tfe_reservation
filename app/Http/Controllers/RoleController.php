@@ -25,7 +25,7 @@ return view('role.index',['roles'=>$listrole]);
   return view('role.create');
    }
 //enregistrer les reservations
-   public function store(roleRequest $request){
+   public function store(Request $request){
 
    $role =new Role();
 
@@ -46,25 +46,22 @@ return view('role.index',['roles'=>$listrole]);
 
    }
 //pour modifier les reservations
-       public function update(roleRequest $request, $id){
+       public function update(Request $request){
 
- $role = Role::find($id);
-    $role->role=$request->input('role');
-
-      
-
-            $role->save();
-            return redirect('roles');
+ $role = Role::findOrFail($request->roleid);
+        $role->update($request->all());
+       
+        return back();
 
    }
 //pour supprimer les reservations
-   public function destroy(Request $request, $id){
+   public function destroy(Request $request){
      
-      $role = Role::find($id);
+      $role = Role::findOrFail($request->roleid);
 
       $role->delete();
        
-       return redirect('roles');
+       return back();
 
 }
 }

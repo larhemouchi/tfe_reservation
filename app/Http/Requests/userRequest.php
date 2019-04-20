@@ -29,6 +29,7 @@ class userRequest extends FormRequest
          'id_role'=>'required|min:1|max:200',
          'nom'=>'required|min:2|max:200',
          'prenom'=>'required|min:2|max:200',
+         'sex'=>'required|min:3|max:200',
          'email'=>'required|min:8|max:200',
           'telephone'=>'required|min:10|max:200'
 

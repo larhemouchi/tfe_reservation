@@ -81,6 +81,19 @@
             @endif
 			
 </div>
+<div class="form-group  @if($errors->get('sex'))has-error @endif">
+		<label for="">sex :</label>
+		<input type="text" name="sex" class="form-control" value="{{old('sex')}}">
+
+		            @if($errors->get('sex'))
+            @foreach($errors->get('sex') as $message)
+
+             {{$message}}
+            @endforeach
+
+            @endif
+			
+</div>
 
 <div class="form-group  @if($errors->get('email'))has-error @endif">
 		<label for="">E-mail :</label>

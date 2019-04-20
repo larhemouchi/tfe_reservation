@@ -39,6 +39,7 @@ return view('user.index',['users'=>$listuser]);
      $user->role_id=$request->input('role_id');
       $user->nom=$request->input('nom');
        $user->prenom=$request->input('prenom');
+        $user->sex=$request->input('sex');
       $user->email=$request->input('email');
         $user->telephone=$request->input('telephone');
 
@@ -67,6 +68,7 @@ return view('user.index',['users'=>$listuser]);
         $user->id_role=$request->input('id_role');
         $user->nom=$request->input('nom');
         $user->prenom=$request->input('prenom');
+        $user->sex=$request->input('sex');
         $user->email=$request->input('email');
         $user->telephone=$request->input('telephone');
             

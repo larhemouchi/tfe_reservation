@@ -91,6 +91,19 @@
                             </div>
                         </div>
 
+ <div class="form-group{{ $errors->has('sex') ? ' has-error' : '' }}">
+                            <label for="sex" class="col-md-4 control-label">Sex</label>
+
+                            <div class="col-md-6">
+                                <input id="sex" type="text" class="form-control" name="sex" value="{{ old('sex') }}" required autofocus>
+
+                                @if ($errors->has('sex'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('sex') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">Adresse E-Mail</label>

@@ -17,7 +17,7 @@ class CreateSallesTable extends Migration
     
             $table->increments('id');
             $table->integer('num_salle')->nullable();
-            $table->integer('nbre_place')->nullable();
+            $table->integer('capacite')->nullable();
                     
             $table->string('images_salle');
 

@@ -8,12 +8,12 @@ use App\Http\Requests\siegeRequest;
 
 class SiegeController extends Controller
 {
-    public function __construct() // cette method sert a : pour  voir cet page tu doit etre authentifier
-    {
-        $this->middleware('auth');
-    }
+public function __construct(){ // cette method sert a : pour  voir cet page tu doit etre authentifier
+
+          $this->middleware('auth');
+        }
      //pour lister les reservations
-   public function index(){
+    public function index(){
 
 $listsiege= Siege::all();
 
@@ -26,17 +26,15 @@ return view('siege.index',['sieges'=>$listsiege]);
   return view('siege.create');
    }
 //enregistrer les reservations
-   public function store(siegeRequest $request){
+   public function store(Request $request){
 
    $siege =new Siege();
 
    $siege->id_salle=$request->input('id_salle');
-    $siege->type_siege=$request->input('type_siege');
-     $siege->prix_siege=$request->input('prix_siege');
-      $siege->nom_siege=$request->input('nom_siege');
-     
-       
-      
+   $siege->prix_siege=$request->input('prix_siege');
+   $siege->nom_siege=$request->input('nom_siege');
+   $siege->id_categorie=$request->input('id_categorie');
+
         $siege->save();
         return redirect('sieges');
 
@@ -52,31 +50,22 @@ return view('siege.index',['sieges'=>$listsiege]);
 
    }
 //pour modifier les reservations
-       public function update(siegeRequest $request, $id){
+       public function update(Request $request){
 
-     $siege = Siege::find($id);
-
-     $siege->id_salle=$request->input('id_salle');
-     $siege->type_siege=$request->input('type_siege');
-     $siege->prix_siege=$request->input('prix_siege');
-     $siege->nom_siege=$request->input('nom_siege');
-
-      
-
-            $siege->save();
-            return redirect('sieges');
+ $siege = Siege::findOrFail($request->idsiege);
+        $siege->update($request->all());
+       
+        return back();
 
    }
 //pour supprimer les reservations
-   public function destroy(Request $request, $id){
+   public function destroy(Request $request){
      
-      $siege = Siege::find($id);
+      $siege = Siege::findOrFail($request->idsiege);
 
       $siege->delete();
        
-       return redirect('sieges');
-       
-
+       return back();
 
 }
 }

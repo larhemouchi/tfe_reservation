@@ -23,8 +23,8 @@ class CreatePaiementsTable extends Migration
               ->on('users')
               ->onDelete('cascade'); 
               
-         $table->integer('numero_compte');
-         $table->integer('numero_carte');
+         $table->string('numero_compte');
+         $table->string('numero_carte');
          $table->string('nom');
          $table->string('prenom');
           $table->datetime('date_expiration');

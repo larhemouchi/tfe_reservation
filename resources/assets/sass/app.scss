@@ -7,3 +7,7 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+$fa-font-path: "../fonts/" !default;
+@import "~font-awesome/scss/font-awesom";

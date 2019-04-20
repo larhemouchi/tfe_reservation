@@ -51,6 +51,7 @@ class RegisterController extends Controller
 
             'nom' => 'required|string|max:255',
             'prenom' => 'required|string|max:255',
+            'sex' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'telephone' => 'required|string|max:255',
             
@@ -71,6 +72,7 @@ class RegisterController extends Controller
             'id_role' => $data['id_role'],
             'nom' => $data['nom'],
             'prenom' => $data['prenom'],
+            'sex' => $data['sex'],
             'email' => $data['email'],
              'telephone' => $data['telephone'],
         ]);

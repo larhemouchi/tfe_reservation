@@ -17,7 +17,8 @@
 		<th>password</th>
 		<th>Id de Role</th>
 		<th>Nom</th>
-		<th>Prenom</th>
+		<th>Prénom</th>
+		<th>Sex</th>
 		<th>E-mail</th>
 		<th>Telephone</th>
 		<th>Action </th>
@@ -32,6 +33,7 @@
 		<td>{{$user->id_role}}</td>
 		<td>{{$user->nom}}</td>
          <td>{{$user->prenom}}</td>
+         <td>{{$user->sex}}</td>
 		<td>{{$user->email}}</td>
 		<td>{{$user->telephone}}</td>
 		<td>

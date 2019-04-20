@@ -23,10 +23,16 @@ class CreateSiegesTable extends Migration
               ->on('salles')
               ->onDelete('cascade');
 
-            $table->string('type_siege')->nullable();
+            
             $table->double('prix_siege')->nullable();
                     
             $table->string('nom_siege');
+
+             $table->integer('id_categorie')->unsigned()->index();
+            $table->foreign('id_categorie')
+              ->references('id')
+              ->on('categories')
+              ->onDelete('cascade');
 
 
             $table->timestamps();

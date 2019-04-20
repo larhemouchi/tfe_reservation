@@ -33,7 +33,7 @@ return view('salle.index',['salles'=>$listsalle]);
    $salle =new Salle();
 
    $salle->num_salle=$request->input('num_salle');
-    $salle->nbre_place=$request->input('nbre_place');
+    $salle->capacite=$request->input('capacite');
 
     if($request->hasFile('images_salle')){
      $salle->images_salle= $request->images_salle->store('images');
@@ -59,7 +59,7 @@ return view('salle.index',['salles'=>$listsalle]);
  $salle = Salle::find($id);
  
        $salle->num_salle=$request->input('num_salle');
-    $salle->nbre_place=$request->input('nbre_place');
+    $salle->capacite=$request->input('capacite');
 
     if($request->hasFile('images_salle')){
      $salle->images_salle= $request->images_salle->store('images');

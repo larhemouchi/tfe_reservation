@@ -26,9 +26,8 @@ class siegeRequest extends FormRequest
         return [
          'id_salle'=>'required|min:1|max:200',
            'nom_siege'=>'required|min:1|max:200',
-         'type_siege'=>'required|min:1|max:200',
          'prix_siege'=>'required|min:1|max:200'
-       
+         'id_categorie'=>'required|min:1|max:200',
       
         
         ];

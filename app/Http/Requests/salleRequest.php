@@ -25,7 +25,7 @@ class salleRequest extends FormRequest
     {
         return [
             'num_salle'=>'required|min:1|max:200',
-         'nbre_place'=>'required|min:1|max:200',
+         'capacite'=>'required|min:1|max:200',
          'images_salle'=>'required|min:4|max:200'
          
         
