@@ -451,5 +451,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
 })
 </script>
 
+<script>
+  
+  $('#edit').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var role = button.data('role') 
+      var roleid = button.data('roleid') 
+
+      var idsiege = button.data('idsiege') 
+      var idsalle = button.data('idsalle') 
+      var prixsiege = button.data('prixsiege') 
+        var nomsiege = button.data('nomsiege') 
+      var idcategorie = button.data('idcategorie') 
+      var modal = $(this)
+      
+      modal.find('.modal-body #id_salle').val(idsalle);
+      modal.find('.modal-body #prix_siege').val(prixsiege);
+ modal.find('.modal-body #nom_siege').val(nomsiege);
+      modal.find('.modal-body #id_categorie').val(idcategorie);
+modal.find('.modal-body #idsiege').val(idsiege);
+ modal.find('.modal-body #role').val(role);
+      modal.find('.modal-body #roleid').val(roleid);
+
+})
+  $('#delete').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var roleid = button.data('roleid') 
+       var idsiege = button.data('idsiege') 
+      var modal = $(this)
+      modal.find('.modal-body #roleid').val(roleid);
+       modal.find('.modal-body #idsiege').val(idsiege);
+})
+</script>
+
+
 </body>
 </html>

@@ -12,7 +12,10 @@ class Siege extends Model
 	
     use SoftDeletes;
      protected $dates=['deleted_at'];
-     protected $fillable=['id_salle','prix_siege','nom_siege','id_categorie'];
+     
+       protected $fillable = ['id_salle','prix_siege','nom_siege','id_categorie'];
+ 
+     
 
      public function salles(){
 

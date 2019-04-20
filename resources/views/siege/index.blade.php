@@ -37,8 +37,7 @@
 
                    
 
-<button class="btn btn-info" data-toggle="modal" data-idsiege="{{$siege->id}}" data-idsalle="{{$siege->id_salle}}"   
-data-prixsiege="{{$siege->prix_siege}}" data-nomsiege="{{$siege->nom_siege}}" data-idcategorie="{{$siege->id_categorie}}"	data-target="#edit">Edit</button>
+<button class="btn btn-info" data-toggle="modal" data-idsiege="{{$siege->id}}" data-idsalle="{{$siege->id_salle}}" data-prixsiege="{{$siege->prix_siege}}" data-nomsiege="{{$siege->nom_siege}}" data-idcategorie="{{$siege->id_categorie}}"	data-target="#edit">Edit</button>
 
 <button class="btn btn-danger" data-toggle="modal"  data-idsiege="{{$siege->id}}"  data-target="#delete">Delete</button>
 
