@@ -31,7 +31,7 @@ return view('siege.index',['sieges'=>$listsiege]);
    $siege =new Siege();
 
    $siege->id_salle=$request->input('id_salle');
-   $siege->prix_siege=$request->input('prix_siege');
+   
    $siege->nom_siege=$request->input('nom_siege');
    $siege->id_categorie=$request->input('id_categorie');
 

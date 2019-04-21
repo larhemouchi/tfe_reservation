@@ -15,7 +15,7 @@
               <tr role="row">
          
                 <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">ID salle</th>
-            <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Prix de siege</th>
+   
                         <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Nom de siege</th>
          <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Id de Categorie</th>
 
@@ -28,7 +28,7 @@
                 <tr role="row" class="odd">
                   
                   <td class="sorting_1">{{ $siege->id_salle }}</td>
-                <td class="sorting_1">{{ $siege->prix_siege }}</td>
+             
                 <td class="sorting_1">{{ $siege->nom_siege }}</td>
                 <td class="sorting_1">{{ $siege->id_categorie }}</td>
              

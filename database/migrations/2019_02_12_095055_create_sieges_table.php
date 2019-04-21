@@ -24,7 +24,7 @@ class CreateSiegesTable extends Migration
               ->onDelete('cascade');
 
             
-            $table->double('prix_siege')->nullable();
+           
                     
             $table->string('nom_siege');
 
