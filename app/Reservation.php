@@ -10,7 +10,7 @@ class Reservation extends Model
 	use SoftDeletes;
 	 protected $dates=['deleted_at']; 
 
-	  protected $fillable = ['id_representation','id_user', 'tarif_total','nbre_place_reserve','id_paiement','date_reservation'];
+	  protected $fillable = ['id_representation','id_user', 'id_paiement','tarif_total','nbre_place_reserve','date_reservation'];
 
 public function user(){
 

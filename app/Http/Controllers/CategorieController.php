@@ -13,7 +13,7 @@ class CategorieController extends Controller
         $this->middleware('auth');
     }
      //pour lister les reservations
-   public function index(){
+  public function index(){
 
 $listcategorie= Categorie::all();
 
@@ -26,17 +26,14 @@ return view('categorie.index',['categories'=>$listcategorie]);
   return view('categorie.create');
    }
 //enregistrer les reservations
-   public function store(categorieRequest $request){
+   public function store(Request $request){
 
    $categorie =new Categorie();
 
+   $categorie->nom_categorie=$request->input('nom_categorie');
+   $categorie->prix_categorie=$request->input('prix_categorie');
+  
 
-    $categorie->nom_categorie=$request->input('nom_categorie');
-     $categorie->prix_categorie=$request->input('prix_categorie');
-
-     
-       
-      
         $categorie->save();
         return redirect('categories');
 
@@ -52,29 +49,21 @@ return view('categorie.index',['categories'=>$listcategorie]);
 
    }
 //pour modifier les reservations
-       public function update(categorieRequest $request, $id){
+       public function update(Request $request){
 
-     $categorie = Categorie::find($id);
-
-     
-    $categorie->nom_categorie=$request->input('nom_categorie');
-     $categorie->prix_categorie=$request->input('prix_categorie');
-
-
-            $categorie->save();
-            return redirect('categories');
+ $categorie = Categorie::findOrFail($request->idcategorie);
+        $categorie->update($request->all());
+       
+        return back();
 
    }
 //pour supprimer les reservations
-   public function destroy(Request $request, $id){
+   public function destroy(Request $request){
      
-      $categorie = Categorie::find($id);
+      $categorie = Categorie::findOrFail($request->idcategorie);
 
       $categorie->delete();
        
-       return redirect('categories');
-       
-
-
+       return back();
 }
 }

@@ -279,11 +279,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="active"><a href="{{url('roles')}}"><i class="fa fa-link"></i> <span>Roles</span></a></li>
        
         <li><a href="{{url('sieges')}}"><i class="fa fa-link"></i> <span>Sieges</span></a></li>
+<li><a href="{{url('categories')}}"><i class="fa fa-link"></i> <span>Categories</span></a></li>
+<li><a href="{{url('salles')}}"><i class="fa fa-link"></i> <span>Salles</span></a></li>
+
+        <li><a href="{{url('representations')}}"><i class="fa fa-link"></i> <span>Representations</span></a></li>
+<li><a href="{{url('pieces_theatres')}}"><i class="fa fa-link"></i> <span>Piéce de theatre</span></a></li>
 
 
-
-
-
+        <li><a href="{{url('paiements')}}"><i class="fa fa-link"></i> <span>Paiements</span></a></li>
+<li><a href="{{url('reservations')}}"><i class="fa fa-link"></i> <span>Réservations</span></a></li>
 
 
         <li class="treeview">
@@ -431,56 +435,85 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
 <script src="{{asset('adminlte/dist/js/app.js')}}"></script>
 
-<script>
-  
-  $('#edit').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget) 
-      var role = button.data('role') 
-      var roleid = button.data('roleid') 
-    
-      var modal = $(this)
-      modal.find('.modal-body #role').val(role);
-      modal.find('.modal-body #roleid').val(roleid);
 
-})
-  $('#delete').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget) 
-      var roleid = button.data('roleid') 
-      var modal = $(this)
-      modal.find('.modal-body #roleid').val(roleid);
-})
-</script>
 
 <script>
   
   $('#edit').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) 
+      /*  Role  */
       var role = button.data('role') 
       var roleid = button.data('roleid') 
-
+/*  siege  */
       var idsiege = button.data('idsiege') 
       var idsalle = button.data('idsalle') 
       var prixsiege = button.data('prixsiege') 
         var nomsiege = button.data('nomsiege') 
       var idcategorie = button.data('idcategorie') 
-      var modal = $(this)
-      
+
+/*  Categorie  */
+      var nomcategorie = button.data('nomcategorie') 
+        var prixcategorie = button.data('prixcategorie') 
+      var idcategorie = button.data('idcategorie') 
+
+/*  Reservation  */
+
+      var idrepresentation = button.data('idrepresentation') 
+      var iduser = button.data('iduser') 
+      var idpaiement = button.data('idpaiement') 
+      var tariftotal = button.data('tariftotal') 
+      var nbreplacereserve = button.data('nbreplacereserve')
+      var datereservation = button.data('datereservation')
+                /*  ***********  */
+                var modal = $(this)
+
+/*  Role  */
+       modal.find('.modal-body #role').val(role);
+      modal.find('.modal-body #roleid').val(roleid);
+
+      /*  siege  */
+
+      modal.find('.modal-body #idsiege').val(idsiege);
       modal.find('.modal-body #id_salle').val(idsalle);
       modal.find('.modal-body #prix_siege').val(prixsiege);
- modal.find('.modal-body #nom_siege').val(nomsiege);
+      modal.find('.modal-body #nom_siege').val(nomsiege);
       modal.find('.modal-body #id_categorie').val(idcategorie);
-modal.find('.modal-body #idsiege').val(idsiege);
- modal.find('.modal-body #role').val(role);
-      modal.find('.modal-body #roleid').val(roleid);
+
+     /*  Categorie  */
+      modal.find('.modal-body #idcategorie').val(idcategorie);
+     modal.find('.modal-body #nom_categorie').val(nomcategorie);
+      modal.find('.modal-body #prix_categorie').val(prixcategorie);
+
+      /*  Reservation  */
+
+      modal.find('.modal-body #id_representation').val(idrepresentation);
+     modal.find('.modal-body #id_user').val(iduser);
+      modal.find('.modal-body #id_paiement').val(idpaiement);
+       modal.find('.modal-body #tarif_total').val(tariftotal);
+      modal.find('.modal-body #nbre_place_reserve').val(nbreplacereserve);
+    modal.find('.modal-body #date_reservation').val(datereservation);
 
 })
   $('#delete').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) 
+       /*  Role  */
       var roleid = button.data('roleid') 
-       var idsiege = button.data('idsiege') 
+       /*  Siege  */
+       var idsiege = button.data('idsiege')
+        /*  Categorie  */
+         var idcategorie = button.data('idcategorie') 
+          /*  Reservation  */
+           var idreservation = button.data('idreservation') 
+
       var modal = $(this)
+       /*  Role  */
       modal.find('.modal-body #roleid').val(roleid);
+       /*  Siege  */
        modal.find('.modal-body #idsiege').val(idsiege);
+        /*  Categorie  */
+         modal.find('.modal-body #idcategorie').val(idcategorie);
+          /*  Reservation  */
+          modal.find('.modal-body #idreservation').val(idreservation);
 })
 </script>
 
